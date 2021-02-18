@@ -1,21 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
-import { StoreProvider } from "./Store";
-// import FavouriteEpisode from "./FavoriteEpisode";
-import Favourites from "./../src/Favourites";
+import "./styles/app.scss";
+import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <StoreProvider>
-        <Switch>
-          <Route path="/" exact component={App} />
-          <Route path="/favourites" exact component={Favourites} />
-        </Switch>
-      </StoreProvider>
-    </React.StrictMode>
+    <App />
   </BrowserRouter>,
-  document.getElementById("root")
+  document.querySelector(`#root`)
 );

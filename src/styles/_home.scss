@@ -1,0 +1,10 @@
+.jobs__board {
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+  max-width: 100%;
+  padding: 0 9vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}

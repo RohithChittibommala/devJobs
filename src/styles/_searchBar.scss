@@ -1,0 +1,11 @@
+.search_bar {
+  display: flex;
+  position: relative;
+  padding: 0 10px;
+  top: -28px;
+  border-radius: 5px;
+  background-color: pink;
+  width: 100%;
+  height: 56px;
+  z-index: 5;
+}

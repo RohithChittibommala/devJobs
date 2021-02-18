@@ -1,5 +1,5 @@
 {
-  "name": "testing-ts",
+  "name": "github_jobs",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +11,8 @@
     "@types/react": "^16.9.50",
     "@types/react-dom": "^16.9.8",
     "@types/react-router-dom": "^5.1.6",
+    "axios": "^0.21.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

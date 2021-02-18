@@ -10,6 +10,7 @@
 
 # production
 /build
+/Awad
 
 # misc
 .DS_Store
