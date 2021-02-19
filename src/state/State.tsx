@@ -3,12 +3,12 @@ export interface State {
   isDarkMode: boolean;
 }
 
-type Action = {
+export type Action = {
   type: string;
   payload: any;
 };
 
-interface Job {
+export interface Job {
   id: string;
   type: string;
   url: string;
@@ -41,3 +41,8 @@ export const reducer = (
       return state;
   }
 };
+
+export const addJobs = (payload: Job[]) => ({
+  type: ADD_JOBS,
+  payload,
+});

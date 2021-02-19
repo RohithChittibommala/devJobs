@@ -1,11 +1,11 @@
 import React, { createContext, useReducer } from "react";
-import { intialState, reducer, State } from "./State";
+import { intialState, reducer, State, Action } from "./State";
 
 interface Props {}
 
 interface Context {
   state: State;
-  dispatch?: React.Dispatch<any>;
+  dispatch?: React.Dispatch<Action>;
 }
 
 export const Store = createContext<Context>({ state: intialState });

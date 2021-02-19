@@ -7,4 +7,11 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  .job_listings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px 15px;
+    margin: 70px auto 90px;
+    width: 100%;
+  }
 }

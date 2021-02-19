@@ -1,19 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import location from "../desktop/icon-location.svg";
 import search from "../desktop/icon-search.svg";
-import * as a from "../api_request/request";
-import { Store } from "../state/StoreProvider";
+
 interface Props {}
 
 export const SearchBar: React.FC<Props> = (props) => {
-  const { state } = useContext(Store);
-
-  console.log(state);
-
-  useEffect(() => {
-    console.log(a.getJobPostings());
-  }, []);
-
   return (
     <div className="search_bar">
       <div className="search_bar_container">
