@@ -4,8 +4,65 @@
   padding: 0 10px;
   top: -28px;
   border-radius: 5px;
-  background-color: pink;
+  background-color: #fff;
   width: 100%;
   height: 56px;
   z-index: 5;
+
+  input {
+    border: none;
+    display: block;
+    padding: 20px 15px 20px 35px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 0.9em;
+    // border-right: 1px solid rgb(158, 175, 194);
+    &::placeholder {
+      font-size: 0.9em;
+      opacity: 0.75;
+    }
+  }
+  &_container {
+    width: 90%;
+    display: flex;
+
+    div {
+      position: relative;
+      padding: 0.5vw;
+      .icon {
+        position: absolute;
+        top: 40%;
+        display: block;
+        width: 15px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    &_position {
+      flex: 0.45;
+      border-right: 1px solid rgb(158, 175, 194);
+    }
+    &_location {
+      flex: 0.45;
+      border-right: 1px solid rgb(158, 175, 194);
+    }
+    &_type {
+      input {
+        width: 15px;
+        background: #3d5d7c;
+        display: block;
+        margin: 5px;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      font-family: $TextFont;
+      font-size: 12px;
+      font-weight: bold;
+      flex: 0.1;
+    }
+  }
 }

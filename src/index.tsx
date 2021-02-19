@@ -3,9 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import "./styles/app.scss";
 import { BrowserRouter } from "react-router-dom";
+import StoreProvider from "./state/StoreProvider";
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <StoreProvider>
+      <App />
+    </StoreProvider>
   </BrowserRouter>,
   document.querySelector(`#root`)
 );

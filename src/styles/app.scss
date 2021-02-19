@@ -3,12 +3,15 @@
 * {
   margin: 0%;
   padding: 0%;
-  // overflow-x: hidden;
   box-sizing: border-box;
+}
+$HeadingFont: "Lato", sans-serif;
+$TextFont: "Noto Sans", sans-serif;
+
+body {
+  background: #f3f5f7;
 }
 @import "header";
 @import "home";
 @import "searchBar";
-
-$HeadingFont: "Lato", sans-serif;
-$TextFont: "Noto Sans", sans-serif;
+@import "jobListing";
