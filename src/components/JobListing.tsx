@@ -47,7 +47,7 @@ const JobListing: React.FC<Props> = ({ job }) => {
       <p className="job_listing_company">{job.company}</p>
       <div className="job_listing_location">
         <img src={location} alt="" />
-        <ResponsiveEllipsis text={job.location} component="small" />
+        <ResponsiveEllipsis text={job.location} component="p" />
       </div>
     </div>
   );

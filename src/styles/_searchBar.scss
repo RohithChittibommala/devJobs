@@ -24,7 +24,7 @@
     }
   }
   &_container {
-    width: 90%;
+    width: 100%;
     display: flex;
 
     div {
@@ -34,6 +34,7 @@
         position: absolute;
         top: 40%;
         display: block;
+        margin: 0 10px;
         width: 15px;
         img {
           width: 100%;
@@ -63,6 +64,29 @@
       font-size: 12px;
       font-weight: bold;
       flex: 0.1;
+    }
+    &_button {
+      display: flex;
+      align-items: center;
+      flex: 0.1;
+      button {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border-radius: 8px;
+        transition: 0.2s ease all;
+        font-size: 18px;
+        outline: none;
+        border: 1px solid #0fb45a;
+
+        &:hover {
+          background: #30a5c4;
+          color: #fff;
+          cursor: pointer;
+          outline: none;
+          border: none;
+        }
+      }
     }
   }
 }
