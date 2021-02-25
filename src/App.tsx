@@ -10,10 +10,10 @@ const App: React.FC<Props> = (props) => {
   const { state, dispatch } = useContext(Store);
   useEffect(() => {
     (async () => {
-      const { data } = await request.getJobPostings();
+      const { data } = await request.fetchJobPostings(state.params);
       dispatch && dispatch(addJobs(data));
     })();
-  }, [dispatch]);
+  }, [state.params.location, state.params.description]);
 
   return (
     <div>

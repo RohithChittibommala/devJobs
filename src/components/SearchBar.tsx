@@ -1,7 +1,8 @@
 import React, { useRef, useContext } from "react";
+import {} from "../api_request/request";
 import location from "../desktop/icon-location.svg";
 import search from "../desktop/icon-search.svg";
-import { toggleIsFullTime } from "../state/State";
+import { toggleIsFullTime, updateParams } from "../state/State";
 import { Store } from "../state/StoreProvider";
 
 interface Props {}
@@ -12,12 +13,17 @@ export const SearchBar: React.FC<Props> = (props) => {
   const locationRef = useRef<HTMLInputElement>(null);
 
   const handleJobSearch = () => {
-    if (postionRef.current) {
+    const params: any = {};
+    if (postionRef.current?.value && postionRef.current.value.length > 0) {
+      params.description = postionRef.current.value;
       postionRef.current.value = "";
     }
-    if (locationRef.current) {
+    if (locationRef.current?.value && locationRef.current.value.length > 0) {
+      params.location = locationRef.current.value;
       locationRef.current.value = "";
     }
+    if (params.description || params.location)
+      dispatch && dispatch(updateParams(params));
   };
 
   return (

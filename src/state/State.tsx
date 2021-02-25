@@ -1,11 +1,15 @@
-import { filterJobs } from "../utils/jobFilter";
-
 export interface State {
   jobs: Job[];
-  filteredjobs: Job[];
   isDarkMode: boolean;
   isFullTime: boolean;
+  params: params;
+  hasMoreJobs: boolean;
 }
+export type params = {
+  location?: string;
+  description?: string;
+  page: 0 | number;
+};
 
 export type Action = {
   type: string;
@@ -29,28 +33,44 @@ export interface Job {
 export const intialState: State = {
   isFullTime: false,
   jobs: [],
-  filteredjobs: [],
   isDarkMode: false,
+  params: {
+    page: 0,
+  },
+  hasMoreJobs: true,
 };
 
 const ADD_JOBS = "ADD_JOBS";
 const ADD_SEARCHED_JOBS = "ADD_SEARCHED_JOBS";
-const FILTER_JOBS = "FILTER_JOBS";
+const UPDATE_PARAMS = "UPDATE_PARAMS";
 const TOGGLE_FULL_TIME = "TOGGLE_FULL_TIME";
+export const LOAD_MORE_JOBS = "LOAD_MORE_JOBS";
 
 export const reducer = (state = intialState, action: Action): State => {
   switch (action.type) {
     case ADD_JOBS:
-      return { ...state, jobs: [...state.jobs, ...action.payload] };
-    case ADD_SEARCHED_JOBS:
-      return { ...state, jobs: [...action.payload] };
-    case FILTER_JOBS:
-      return { ...action.payload };
+      return {
+        ...state,
+        jobs: action.payload,
+        params: { ...state.params, page: state.params.page + 1 },
+        hasMoreJobs: action.payload.length >= 50 ? true : false,
+      };
+    case UPDATE_PARAMS:
+      return {
+        ...state,
+        params: { ...action.payload, page: 0 },
+      };
+    case LOAD_MORE_JOBS:
+      return {
+        ...state,
+        jobs: [...state.jobs, ...action.payload],
+        params: { ...state.params, page: state.params.page + 1 },
+        hasMoreJobs: action.payload.length >= 50 ? true : false,
+      };
     case TOGGLE_FULL_TIME:
       return {
         ...state,
         isFullTime: !state.isFullTime,
-        jobs: [...filterJobs(state.jobs, !state.isFullTime)],
       };
     default:
       return state;
@@ -64,5 +84,15 @@ export const addJobs = (payload: Job[]) => ({
 
 export const toggleIsFullTime = (payload: null) => ({
   type: TOGGLE_FULL_TIME,
+  payload,
+});
+
+export const updateParams = (payload: params) => ({
+  type: UPDATE_PARAMS,
+  payload,
+});
+
+export const loadMoreJobs = (payload: any) => ({
+  type: LOAD_MORE_JOBS,
   payload,
 });
