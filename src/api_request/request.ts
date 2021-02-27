@@ -5,11 +5,13 @@ const BASE_URL =
 
 export const fetchJobPostings = (params: params) =>
   axios.get(BASE_URL, {
+    headers: { "X-Requested-With": "XMLHttpRequest" },
     params: params,
   });
 
 export const fetchMoreJobs = async (params: params, dispatch: any) => {
   const { data } = await axios.get(BASE_URL, {
+    headers: { "X-Requested-With": "XMLHttpRequest" },
     params: params,
   });
   dispatch(loadMoreJobs(data));

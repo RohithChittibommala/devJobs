@@ -1,0 +1,31 @@
+.job_details_header {
+  display: flex;
+  background: #fff;
+  transform: translateY(-30px);
+  padding: 15px 10px;
+  .logo_container {
+    width: 150px;
+    img {
+      object-fit: contain;
+      max-width: 100%;
+    }
+  }
+  .text-box {
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    font-family: $TextFont;
+  }
+}
+
+.no-url {
+  color: #ff9483;
+  background: #ffe5e5;
+  width: 150px;
+  text-align: center;
+  padding: 9px 12px;
+  border: 1px solid #ff8989;
+  cursor: pointer;
+}

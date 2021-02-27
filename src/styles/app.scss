@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,400&family=Noto+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+$HeadingFont: "Lato", sans-serif;
+$TextFont: "Noto Sans", sans-serif;
+$NoOfJobsFont: "Playfair Display", serif;
+
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
   transition: 0.2s ease-in all;
+  font-family: $TextFont;
 }
 body {
   background: #f8fbff;
 }
-$HeadingFont: "Lato", sans-serif;
-$TextFont: "Noto Sans", sans-serif;
-$NoOfJobsFont: "Playfair Display", serif;
 
 .load-more {
   position: relative;
@@ -33,3 +35,4 @@ $NoOfJobsFont: "Playfair Display", serif;
 @import "home";
 @import "searchBar";
 @import "jobListing";
+@import "jobdetails";

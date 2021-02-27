@@ -29,10 +29,13 @@
     display: flex;
     span {
       margin: 0 10px;
+      // color: #000;
     }
+    color: #000;
   }
   &_title {
     margin: 15px 0 10px 0;
+    color: #000;
   }
   &_company {
     // margin: 15px 0;
@@ -48,4 +51,8 @@
       margin-right: 5px;
     }
   }
+}
+
+.link {
+  text-decoration: none;
 }

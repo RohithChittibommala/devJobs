@@ -5,6 +5,7 @@ import { getTimeDifference } from "../utils/time";
 import LinesEllipsis from "react-lines-ellipsis";
 import location from "../desktop/location2.svg";
 import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
+import { Link } from "react-router-dom";
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 interface Props {
   job: Job;
@@ -26,35 +27,39 @@ const getBackgroundColor = () => ({
 });
 const JobListing: React.FC<Props> = ({ job }) => {
   return (
-    <div className="job_listing">
-      <div className="job_listing_company_logo" style={getBackgroundColor()}>
-        <img
-          src={job.company_logo ? job.company_logo : defaultCompanyLogo}
-          alt="companylogo"
+    <Link className="link" to={`/job/${job.id}`}>
+      <div className="job_listing">
+        <div className="job_listing_company_logo" style={getBackgroundColor()}>
+          <img
+            src={job.company_logo ? job.company_logo : defaultCompanyLogo}
+            alt="companylogo"
+          />
+        </div>
+        <div className="job_listing_time_type">
+          <p className="time">
+            {getTimeDifference(Date.parse(job.created_at))}
+          </p>
+          <span>•</span>
+          <p className="type">{job.type}</p>
+        </div>
+        <ResponsiveEllipsis
+          className="job_listing_title"
+          text={job.title}
+          component="h3"
+          maxLine={2}
         />
-      </div>
-      <div className="job_listing_time_type">
-        <p className="time">{getTimeDifference(Date.parse(job.created_at))}</p>
-        <span>•</span>
-        <p className="type">{job.type}</p>
-      </div>
-      <ResponsiveEllipsis
-        className="job_listing_title"
-        text={job.title}
-        component="h3"
-        maxLine={2}
-      />
-      <ResponsiveEllipsis
-        className="job_listing_company"
-        component="p"
-        text={job.company}
-      />
+        <ResponsiveEllipsis
+          className="job_listing_company"
+          component="p"
+          text={job.company}
+        />
 
-      <div className="job_listing_location">
-        <img src={location} alt="" />
-        <ResponsiveEllipsis text={job.location} component="p" />
+        <div className="job_listing_location">
+          <img src={location} alt="" />
+          <ResponsiveEllipsis text={job.location} component="p" />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import { Route, Switch } from "react-router-dom";
 import * as request from "./api_request/request";
 import { Store } from "./state/StoreProvider";
 import { addJobs } from "./state/State";
+import DetailsJob from "./components/DetailJob";
 
 interface Props {}
 const App: React.FC<Props> = (props) => {
@@ -18,7 +20,11 @@ const App: React.FC<Props> = (props) => {
   return (
     <div>
       <Header />
-      <Home />
+      <Switch>
+        <Route path="/job/:id" exact component={DetailsJob} />
+        <Route path="/" exact component={Home} />
+      </Switch>
+      {/* <Home /> */}
     </div>
   );
 };
