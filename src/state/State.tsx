@@ -9,7 +9,6 @@ export type params = {
   location?: string;
   description?: string;
   page: 0 | number;
-  markdown: true;
 };
 
 export type Action = {
@@ -37,7 +36,6 @@ export const intialState: State = {
   isDarkMode: false,
   params: {
     page: 1,
-    markdown: true,
   },
   hasMoreJobs: true,
 };

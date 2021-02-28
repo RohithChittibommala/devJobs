@@ -10,18 +10,18 @@ const DetailsJob: React.FC<Props> = (props) => {
   if (!job) history.push("/");
   console.log(job);
 
-  const company_url =
-    job && job?.company_url.length > 7 ? job?.company_url : null;
+  if (!job) return <div>No description for this job</div>;
+  const company_url = job.company_url?.length > 7 ? job.company_url : null;
 
   return (
     <div className="jobs__board">
       <div className="job_details_header">
         <div className="logo_container">
-          <img src={job?.company_logo} alt="" />
+          <img src={job.company_logo} alt="" />
         </div>
         <div className="text-box">
           <div className="text_box_company">
-            <h1>{job?.company}</h1>
+            <h1>{job.company}</h1>
           </div>
           <div>
             {company_url ? (
@@ -33,7 +33,12 @@ const DetailsJob: React.FC<Props> = (props) => {
         </div>
       </div>
       <div className="job_details_body">
-        <p>{job?.description}</p>
+        <div
+          className="inner"
+          dangerouslySetInnerHTML={{
+            __html: job.description,
+          }}
+        ></div>
       </div>
     </div>
   );

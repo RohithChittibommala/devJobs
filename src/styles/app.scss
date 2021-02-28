@@ -31,6 +31,12 @@ body {
   }
 }
 
+@media screen and (max-width: 760px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
 @import "header";
 @import "home";
 @import "searchBar";
