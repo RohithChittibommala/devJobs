@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundsvg from "../desktop/bg-pattern-header.svg";
+import mobilesvg from "../desktop/mobile.svg";
 import logo from "../desktop/logo.svg";
 import sun from "../desktop/icon-sun.svg";
 import moon from "../desktop/icon-moon.svg";
@@ -14,7 +15,8 @@ const Header: React.FC<Props> = (props) => {
   return (
     <div className="header">
       <div className="header__backgrounds">
-        <img src={backgroundsvg} alt="background" />
+        <img src={backgroundsvg} alt="background desktop" className="desktop" />
+        <img src={mobilesvg} alt="background mobile" className="mobile" />
       </div>
       <div className="header__inner">
         <Link className="link" to="/">

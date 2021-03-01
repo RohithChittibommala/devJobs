@@ -1,6 +1,7 @@
 .header {
   min-height: 140px;
   display: flex;
+
   align-items: center;
   z-index: 1;
   position: relative;
@@ -13,10 +14,13 @@
       max-width: 100%;
       width: 100%;
     }
+    img.mobile {
+      display: none;
+    }
   }
   &__inner {
     position: absolute;
-    top: 66px;
+    top: 62px;
     width: 100%;
     padding: 0 9vw;
     display: flex;
@@ -59,6 +63,20 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .header {
+    .desktop {
+      display: none;
+    }
+    img.mobile {
+      display: block;
+    }
+    &__inner {
+      top: 42px;
     }
   }
 }

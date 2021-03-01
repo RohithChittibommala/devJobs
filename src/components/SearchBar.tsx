@@ -1,6 +1,7 @@
 import React, { useRef, useContext } from "react";
 import {} from "../api_request/request";
 import location from "../desktop/icon-location.svg";
+import searchIcon from "../desktop/icon-search.svg";
 import search from "../desktop/icon-search.svg";
 import { toggleIsFullTime, updateParams } from "../state/State";
 import { Store } from "../state/StoreProvider";
@@ -57,7 +58,10 @@ export const SearchBar: React.FC<Props> = (props) => {
           <p>Full Time</p>
         </div>
         <div className="search_bar_container_button">
-          <button onClick={handleJobSearch}>search</button>
+          <button onClick={handleJobSearch}>
+            search <img src={searchIcon} alt="" />
+          </button>
+          <span></span>
         </div>
       </div>
     </div>
