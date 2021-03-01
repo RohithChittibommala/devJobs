@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,400&family=Noto+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 $HeadingFont: "Lato", sans-serif;
 $TextFont: "Noto Sans", sans-serif;
-$NoOfJobsFont: "Playfair Display", serif;
 
 * {
   margin: 0%;
@@ -31,9 +29,10 @@ body {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 768px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    padding: 10px 0;
   }
 }
 

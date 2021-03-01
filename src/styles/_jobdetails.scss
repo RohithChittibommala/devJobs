@@ -3,7 +3,8 @@
     display: flex;
     background: #fff;
     transform: translateY(-30px);
-    padding: 15px 10px;
+    padding: 20px 10px;
+    border-radius: 5px;
     .logo_container {
       width: 150px;
       img {
@@ -12,30 +13,60 @@
       }
     }
     .text-box {
+      h1 {
+        font-size: 1.9rem;
+      }
       display: flex;
-      padding: 0 50px;
+      // padding: 0 50px;
       align-items: center;
       justify-content: space-around;
       flex: 1;
       font-family: $TextFont;
+      a {
+        word-wrap: inherit;
+      }
     }
   }
   &_body {
     padding: 35px;
     background-color: #fff;
-    word-wrap: break-word;
-    ul,
-    li {
-      margin: 15px 0;
-      list-style: none;
-      max-width: 100%;
-    }
-    a {
-      text-overflow: ellipsis;
-      max-width: 100%;
+    h1 {
+      color: #072540;
+      font-weight: 800;
     }
     .inner {
-      max-width: 100%;
+      color: #6d7f97;
+      ul,
+      li {
+        list-style: disc;
+        margin: 0 20px 10px calc(10px + 1em);
+        max-width: 100%;
+      }
+      a {
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
+      .inner {
+        max-width: 100%;
+        p {
+          margin: 10px 0;
+          color: pink;
+        }
+      }
+    }
+    .apply-btn {
+      a {
+        text-decoration: none;
+        width: 100%;
+        color: #fff;
+      }
+      padding: 6px 8px;
+      border-radius: 18px;
+      background-color: #072540;
+      width: 150px;
+      margin: 15px auto;
+
+      text-align: center;
     }
   }
 }
@@ -50,6 +81,18 @@
   cursor: pointer;
 }
 
+.company_url {
+  text-decoration: none;
+  background-color: #f1f7fa;
+  padding: 12px 15px;
+  color: #5b6987;
+  border-radius: 32px;
+  &:hover {
+    background: #ff73fa;
+    color: #fff;
+  }
+}
+
 @media screen and (max-width: 760px) {
   .job_details {
     &_header {
@@ -58,6 +101,16 @@
       .text-box {
         flex-direction: column;
         padding: 0 15px;
+      }
+    }
+    &_body {
+      padding: 15px;
+      p {
+        margin: 10px;
+      }
+      .inner ul,
+      li {
+        margin: 0 10px;
       }
     }
   }

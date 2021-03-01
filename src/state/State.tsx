@@ -41,7 +41,6 @@ export const intialState: State = {
 };
 
 const ADD_JOBS = "ADD_JOBS";
-const ADD_SEARCHED_JOBS = "ADD_SEARCHED_JOBS";
 const UPDATE_PARAMS = "UPDATE_PARAMS";
 const TOGGLE_FULL_TIME = "TOGGLE_FULL_TIME";
 export const LOAD_MORE_JOBS = "LOAD_MORE_JOBS";
