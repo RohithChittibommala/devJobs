@@ -8,11 +8,11 @@ interface Props {}
 const Home: React.FC<Props> = (props) => {
   const { state, dispatch } = useContext(Store);
   const jobs = state.isFullTime ? filterJobs(state.jobs) : state.jobs;
-  console.log(jobs);
+  const { isDarkMode } = state;
 
   const renderLoadMoreBtn = () => (
     <div
-      className="load-more"
+      className={`load-more ${state.isDarkMode ? `dark` : ``}`}
       onClick={() => fetchMoreJobs(state.params, dispatch)}
     >
       Load More
@@ -20,14 +20,14 @@ const Home: React.FC<Props> = (props) => {
   );
 
   return (
-    <div className="jobs__board">
+    <div className={`jobs__board ${isDarkMode ? `dark` : ``}`}>
       <SearchBar />
       <h1>
         Total of {state.jobs.length} results found related to your queries
       </h1>
       <div className="job_listings">
         {jobs.map((job) => (
-          <JobListing job={job} key={job.id} />
+          <JobListing job={job} key={job.id} isDarkMode={state.isDarkMode} />
         ))}
       </div>
       {state.jobs.length % 50 === 0 ? (

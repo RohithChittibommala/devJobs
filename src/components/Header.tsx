@@ -1,20 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import backgroundsvg from "../desktop/bg-pattern-header.svg";
 import mobilesvg from "../desktop/mobile.svg";
 import logo from "../desktop/logo.svg";
 import sun from "../desktop/icon-sun.svg";
 import moon from "../desktop/icon-moon.svg";
+import { Store } from "../state/StoreProvider";
+import { toggleDarkMode } from "../state/State";
 interface Props {}
 const Header: React.FC<Props> = (props) => {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const { dispatch, state } = useContext(Store);
   const handleThemeToggle = () => {
-    setDarkTheme((prev) => !prev);
+    dispatch && dispatch(toggleDarkMode(null));
   };
+  const darkTheme = state.isDarkMode;
 
   return (
     <div className="header">
-      <div className="header__backgrounds">
+      <div className={`header__backgrounds ${darkTheme ? `dark` : ``}`}>
         <img src={backgroundsvg} alt="background desktop" className="desktop" />
         <img src={mobilesvg} alt="background mobile" className="mobile" />
       </div>

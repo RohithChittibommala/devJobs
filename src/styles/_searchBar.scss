@@ -73,20 +73,39 @@
         width: 100%;
         height: 100%;
         background-color: transparent;
-        border-radius: 8px;
+        border-radius: 18px;
         transition: 0.2s ease all;
-        font-size: 14px;
+        font-size: 16px;
         outline: none;
         border: 1px solid #0fb45a;
 
         &:hover {
-          background: #30a5c4;
+          background: #6767d1;
           color: #fff;
           cursor: pointer;
           outline: none;
           border: none;
         }
       }
+      div.search-icon {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    // background: #3d5d7c;
+    border: 0px solid rgb(155, 32, 32);
+    display: none;
+  }
+  div.search-icon {
+    display: block;
+  }
+  .search_bar_container_button {
+    div.search-icon {
+      display: block;
     }
   }
 }

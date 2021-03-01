@@ -43,7 +43,8 @@ export const intialState: State = {
 const ADD_JOBS = "ADD_JOBS";
 const UPDATE_PARAMS = "UPDATE_PARAMS";
 const TOGGLE_FULL_TIME = "TOGGLE_FULL_TIME";
-export const LOAD_MORE_JOBS = "LOAD_MORE_JOBS";
+const LOAD_MORE_JOBS = "LOAD_MORE_JOBS";
+const TOGGLE_DARK_MODE = "TOGGLE_DARK_MODE";
 
 export const reducer = (state = intialState, action: Action): State => {
   switch (action.type) {
@@ -71,6 +72,8 @@ export const reducer = (state = intialState, action: Action): State => {
         ...state,
         isFullTime: !state.isFullTime,
       };
+    case TOGGLE_DARK_MODE:
+      return { ...state, isDarkMode: !state.isDarkMode };
     default:
       return state;
   }
@@ -93,5 +96,10 @@ export const updateParams = (payload: params) => ({
 
 export const loadMoreJobs = (payload: any) => ({
   type: LOAD_MORE_JOBS,
+  payload,
+});
+
+export const toggleDarkMode = (payload: null) => ({
+  type: TOGGLE_DARK_MODE,
   payload,
 });

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 interface Props {
   job: Job;
+  isDarkMode: boolean;
 }
 
 const colors = [
@@ -25,10 +26,10 @@ const colors = [
 const getBackgroundColor = () => ({
   backgroundColor: colors[Math.floor(Math.random() * colors.length)],
 });
-const JobListing: React.FC<Props> = ({ job }) => {
+const JobListing: React.FC<Props> = ({ job, isDarkMode }) => {
   return (
     <Link className="link" to={`/job/${job.id}`}>
-      <div className="job_listing">
+      <div className={`job_listing ${isDarkMode ? `dark` : ``}`}>
         <div className="job_listing_company_logo" style={getBackgroundColor()}>
           <img
             src={job.company_logo ? job.company_logo : defaultCompanyLogo}

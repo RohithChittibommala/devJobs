@@ -22,7 +22,12 @@
     }
   }
 }
-
+.dark {
+  background: #072540;
+  h1 {
+    color: #fff;
+  }
+}
 @media screen and(max-width:768px) {
   .jobs__board {
     padding: 0 7vw;

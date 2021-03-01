@@ -59,9 +59,11 @@ export const SearchBar: React.FC<Props> = (props) => {
         </div>
         <div className="search_bar_container_button">
           <button onClick={handleJobSearch}>
-            search <img src={searchIcon} alt="" />
+            <span> search</span>{" "}
           </button>
-          <span></span>
+          <div className="search-icon">
+            <img src={searchIcon} alt="" />
+          </div>
         </div>
       </div>
     </div>
