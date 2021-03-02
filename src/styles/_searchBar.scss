@@ -57,6 +57,7 @@
         display: block;
         margin: 5px;
       }
+
       display: flex;
       align-items: center;
       justify-content: space-around;
@@ -94,18 +95,37 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  button {
-    // background: #3d5d7c;
-    border: 0px solid rgb(155, 32, 32);
-    display: none;
+.search_bar.dark {
+  background: #19212e;
+  input {
+    background: #19212e;
+    color: #f7f7f7;
+    caret-color: #fff;
   }
+  button span {
+    color: #fff;
+  }
+  button:hover {
+    background: #0fb45a;
+  }
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #cdcdce;
+    opacity: 1; /* Firefox */
+  }
+}
+
+@media screen and (max-width: 768px) {
   div.search-icon {
     display: block;
   }
   .search_bar_container_button {
     div.search-icon {
       display: block;
+    }
+    button {
+      border: 0px solid rgb(155, 32, 32);
+      display: none;
     }
   }
 }

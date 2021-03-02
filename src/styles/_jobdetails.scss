@@ -17,7 +17,6 @@
         font-size: 1.9rem;
       }
       display: flex;
-      // padding: 0 50px;
       align-items: center;
       justify-content: space-around;
       flex: 1;
@@ -33,6 +32,12 @@
     h1 {
       color: #072540;
       font-weight: 800;
+    }
+    .job_info {
+      margin: 50px 0;
+      p {
+        text-align: center;
+      }
     }
     .inner {
       color: #6d7f97;
@@ -90,6 +95,23 @@
   &:hover {
     background: #ff73fa;
     color: #fff;
+  }
+}
+
+.jobs__board.dark {
+  .job_details {
+    &_header {
+      background: #183d5d;
+    }
+    &_body {
+      h1 {
+        color: #fff;
+      }
+      .inner {
+        color: rgb(223, 219, 219);
+      }
+      background: #183d5d;
+    }
   }
 }
 

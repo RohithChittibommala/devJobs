@@ -9,9 +9,10 @@ import { Store } from "../state/StoreProvider";
 interface Props {}
 
 export const SearchBar: React.FC<Props> = (props) => {
-  const { dispatch } = useContext(Store);
+  const { dispatch, state } = useContext(Store);
   const postionRef = useRef<HTMLInputElement>(null);
   const locationRef = useRef<HTMLInputElement>(null);
+  const { isDarkMode } = state;
 
   const handleJobSearch = () => {
     const params: any = {};
@@ -28,7 +29,7 @@ export const SearchBar: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className="search_bar">
+    <div className={isDarkMode ? "search_bar dark" : "search_bar"}>
       <div className="search_bar_container">
         <div className="search_bar_container_position">
           <input
@@ -59,7 +60,7 @@ export const SearchBar: React.FC<Props> = (props) => {
         </div>
         <div className="search_bar_container_button">
           <button onClick={handleJobSearch}>
-            <span> search</span>{" "}
+            <span> search</span>
           </button>
           <div className="search-icon">
             <img src={searchIcon} alt="" />

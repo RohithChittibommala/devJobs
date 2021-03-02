@@ -30,7 +30,7 @@ const Home: React.FC<Props> = (props) => {
           <JobListing job={job} key={job.id} isDarkMode={state.isDarkMode} />
         ))}
       </div>
-      {state.jobs.length % 50 === 0 ? (
+      {state.jobs.length % 50 === 0 && jobs.length !== 0 ? (
         renderLoadMoreBtn()
       ) : (
         <h1>Yay! you have seen all</h1>

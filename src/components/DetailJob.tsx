@@ -17,7 +17,7 @@ const DetailsJob: React.FC<Props> = (props) => {
   const company_url = job.company_url?.length > 7 ? job.company_url : null;
   applyNowLink(job.how_to_apply);
   return (
-    <div className="jobs__board">
+    <div className={`jobs__board ${state.isDarkMode ? `dark` : ``}`}>
       <div className="job_details_header">
         <div className="logo_container">
           <img src={job.company_logo} alt="" />
@@ -45,7 +45,9 @@ const DetailsJob: React.FC<Props> = (props) => {
       <div className="job_details_body">
         <div className="job_info">
           <h1>{job.title}</h1>
+          <p>Location:{job.location}</p>
         </div>
+
         <div
           className="inner"
           dangerouslySetInnerHTML={{
