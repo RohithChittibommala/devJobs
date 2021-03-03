@@ -56,7 +56,7 @@
 .job_listing.dark {
   background-color: #183d5d;
   &:hover {
-    box-shadow: 0px 8px 20px rgb(206, 162, 81);
+    box-shadow: -5px 3px 20px 2px rgb(206, 162, 81);
     transform: scale(1.04);
   }
   .job_listing_time_type {
