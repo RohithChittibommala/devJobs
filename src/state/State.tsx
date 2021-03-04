@@ -4,6 +4,7 @@ export interface State {
   isFullTime: boolean;
   params: params;
   hasMoreJobs: boolean;
+  isLoading: boolean;
 }
 export type params = {
   location?: string;
@@ -34,6 +35,7 @@ export const intialState: State = {
   isFullTime: false,
   jobs: [],
   isDarkMode: false,
+  isLoading: true,
   params: {
     page: 1,
   },
@@ -45,6 +47,7 @@ const UPDATE_PARAMS = "UPDATE_PARAMS";
 const TOGGLE_FULL_TIME = "TOGGLE_FULL_TIME";
 const LOAD_MORE_JOBS = "LOAD_MORE_JOBS";
 const TOGGLE_DARK_MODE = "TOGGLE_DARK_MODE";
+const SET_LOADING_STATUS = "SET_LOADING_STATUS";
 
 export const reducer = (state = intialState, action: Action): State => {
   switch (action.type) {
@@ -54,18 +57,23 @@ export const reducer = (state = intialState, action: Action): State => {
         jobs: action.payload,
         params: { ...state.params, page: state.params.page + 1 },
         hasMoreJobs: action.payload.length >= 50 ? true : false,
+        isLoading: false,
       };
     case UPDATE_PARAMS:
       return {
         ...state,
         params: { ...action.payload, page: 0 },
+        isLoading: true,
       };
+    case SET_LOADING_STATUS:
+      return { ...state, isLoading: true };
     case LOAD_MORE_JOBS:
       return {
         ...state,
         jobs: [...state.jobs, ...action.payload],
         params: { ...state.params, page: state.params.page + 1 },
         hasMoreJobs: action.payload.length >= 50 ? true : false,
+        isLoading: false,
       };
     case TOGGLE_FULL_TIME:
       return {
@@ -102,4 +110,9 @@ export const loadMoreJobs = (payload: any) => ({
 export const toggleDarkMode = (payload: null) => ({
   type: TOGGLE_DARK_MODE,
   payload,
+});
+
+export const setLoadingStatus = () => ({
+  type: SET_LOADING_STATUS,
+  payload: null,
 });

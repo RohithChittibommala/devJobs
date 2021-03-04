@@ -24,7 +24,6 @@ const App: React.FC<Props> = (props) => {
         <Route path="/job/:id" exact component={DetailsJob} />
         <Route path="/" exact component={Home} />
       </Switch>
-      {/* <Home /> */}
     </div>
   );
 };

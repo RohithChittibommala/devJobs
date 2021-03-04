@@ -18,6 +18,7 @@
     "react-lines-ellipsis": "^0.14.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-spinners": "^0.10.6",
     "react-toastify": "^6.0.9",
     "typescript": "^3.7.5"
   },
