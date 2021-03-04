@@ -1,12 +1,12 @@
-# Cartoon Box🌩️🌩️
+# DEVJOBS🌩️🌩️
 
-This is project that displays episodes of a tv show using its api 😃😃😃
+This project is built using react.js and scss 😃😃😃
 
 ---
 
-# Motivation
+# API
 
-This project was made so that I can get better understanding of [React Hooks](https://reactjs.org/docs/hooks-intro.html) and typescript-react
+This project was possible because of the because of [github api](https://jobs.github.com/api)
 
 ---
 
