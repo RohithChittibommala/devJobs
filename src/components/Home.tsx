@@ -31,7 +31,7 @@ const Home: React.FC<Props> = (props) => {
       <SearchBar />
       {!isLoading && (
         <h1>
-          Total of {state.jobs.length} results found related to your queries
+          Total of {state.jobs.length} jobs found
         </h1>
       )}
       <div className="job_listings">
