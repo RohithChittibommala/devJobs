@@ -6,7 +6,7 @@ This project is built using react.js and scss 😃😃😃
 
 # API
 
-This project was possible because of the because of [github api](https://jobs.github.com/api)
+This project was possible because of the  [github api](https://jobs.github.com/api) its free no need of any account or private key
 
 ---
 
