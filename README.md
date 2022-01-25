@@ -6,12 +6,7 @@ This project is built using react.js and scss 😃😃😃
 
 # API
 
-This project was possible because of the  [github api](https://jobs.github.com/api) its free no need of any account or private key
-
----
-
-#Deployment
-This app is deployed using netlify [here](https://rohith-devjobs.netlify.app/)
+GitHub has shutdown their jobs api on Aug 2021 
 
 ---
 
